@@ -1,0 +1,3 @@
+.nav-active {
+    @apply border-b-2 border-blue-400 pb-1;
+}

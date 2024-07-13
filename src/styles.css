@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+        
+    body {
+        @apply text-base bg-white dark:bg-stone-950 text-stone-950 dark:text-white tracking-wide;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        @apply font-semibold text-4xl;
+    }
+
+    h2, h3, h4, h5 {
+        @apply font-semibold;
+    }
+
+    h6 {
+        @apply font-semibold text-md;
+    }
+
+    a {
+        @apply cursor-pointer;
+    }
+
+    ::-moz-selection {
+        @apply bg-blue-50 text-black;
+    }
+    
+    ::selection {
+        @apply bg-blue-50 text-black;
+    }
+}
