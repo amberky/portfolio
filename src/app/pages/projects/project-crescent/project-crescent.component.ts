@@ -1,9 +1,10 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ImageService } from '../../../services/image.service';
 import { ImageGalleryComponent } from '../../../components/img-gallery/img-gallery.component';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-project-crescent',
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
     templateUrl: './project-crescent.component.html',
     styleUrl: './project-crescent.component.css'
 })
-export class ProjectCrescentComponent implements OnInit, AfterViewInit {
+export class ProjectCrescentComponent implements OnInit, AfterViewInit, OnDestroy {
     imgWidth!: string | null;
     scrollAmount: number = 0;
 
@@ -27,11 +28,13 @@ export class ProjectCrescentComponent implements OnInit, AfterViewInit {
     lightTaskImages: { src: string, status: boolean, caption: string }[] = [];
     darkTaskImages: { src: string, status: boolean, caption: string }[] = [];
 
+    private subscription: Subscription;
+
     constructor(private cdRef: ChangeDetectorRef,
                 private http: HttpClient,
                 private imgService: ImageService) {
         
-        this.http.get('assets/project-crescent.json')
+        this.subscription = this.http.get('assets/data/project-crescent.json')
             .subscribe((data: any) => {
                 this.lightAuthImages = data.lightAuthImages;
                 this.darkAuthImages = data.darkAuthImages;
@@ -65,5 +68,9 @@ export class ProjectCrescentComponent implements OnInit, AfterViewInit {
             this.scrollAmount = 500 + 16;
         }
         this.cdRef.detectChanges();
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }

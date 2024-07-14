@@ -1,7 +1,8 @@
-import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ImageGalleryComponent } from '../../../components/img-gallery/img-gallery.component';
 import { ImageService } from '../../../services/image.service';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-project-quotes',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
     templateUrl: './project-quotes.component.html',
     styleUrl: './project-quotes.component.css'
 })
-export class ProjectQuotesComponent {
+export class ProjectQuotesComponent implements OnDestroy {
     imgWidth!: string | null;
     scrollAmount: number = 0;
 
@@ -20,11 +21,13 @@ export class ProjectQuotesComponent {
     iPhone55Images: { src: string, status: boolean, caption: string }[] = [];
     watchImages: { src: string, status: boolean, caption: string }[] = [];
 
+    private subscription: Subscription;
+
     constructor(private cdRef: ChangeDetectorRef,
                 private http: HttpClient,
                 private imgService: ImageService) {
 
-        this.http.get('assets/project-quotes.json')
+        this.subscription = this.http.get('assets/data/project-quotes.json')
             .subscribe((data: any) => {
                 this.iPhone65Images = data.iPhone65Images;
                 this.iPhone55Images = data.iPhone55Images;
@@ -52,5 +55,9 @@ export class ProjectQuotesComponent {
             this.scrollAmount = 500 + 16;
         }
         this.cdRef.detectChanges();
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }

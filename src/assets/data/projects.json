@@ -1,0 +1,16 @@
+{
+    "projects": [
+        {
+            "url": "/projects/crescent",
+            "name": "Crescent",
+            "description": "A personal project management tool for organising tasks and projects.",
+            "image": "/assets/images/projects/crescent.png"
+        },
+        {
+            "url": "/projects/quotes",
+            "name": "Quotes",
+            "description": "An iOS app for saving quotes that inspire you.",
+            "image": "/assets/images/projects/quotes.png"
+        }
+    ]
+}

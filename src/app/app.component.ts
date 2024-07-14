@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BreakpointObserver, Breakpoints, LayoutModule } from '@angular/cdk/layout';
@@ -9,6 +9,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SkillsComponent } from './pages/skills/skills.component';
 import { OverviewComponent } from './pages/overview/overview.component';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -20,7 +21,7 @@ import { OverviewComponent } from './pages/overview/overview.component';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
     activeLink: string = '';
     canScrollToTop: boolean = window.scrollY > 0;
 
@@ -28,13 +29,19 @@ export class AppComponent implements AfterViewInit {
     showContent: boolean = true;
     navExpand: boolean = false;
 
+    private subscription: Subscription;
+
     constructor(private breakpointObserver: BreakpointObserver) {
         this.activeLink = window.location.hash;
 
         const layoutChanges = breakpointObserver.observe([Breakpoints.XSmall]);
-        layoutChanges.subscribe(result => {
+        this.subscription = layoutChanges.subscribe(result => {
             this.isMobileView = result.matches;
         });
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 
     ngAfterViewInit(): void {
