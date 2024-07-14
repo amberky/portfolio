@@ -12,16 +12,16 @@
 <div class="flex items-center justify-center">
     @if (canSwitchMode) {
         <div class="flex items-center h-10 rounded-full px-3 bg-slate-200 dark:bg-slate-800 mx-2 *:mx-2">
-            <div class="relative leading-5 align-middle">
-                <input #lightModeInput class="peer/light absolute top-1 left-1" type="radio" name="mode" [(ngModel)]="isLightMode" [value]="true" />
+            <div class="relative leading-4 align-middle">
+                <input #lightModeInput class="peer/light absolute top-0.5 left-0.5" type="radio" name="mode" [(ngModel)]="isLightMode" [value]="true" />
                 <button class="peer-focus/light:ring-2 ring-offset-6 ring-offset-slate-200 dark:ring-offset-slate-950 rounded-full relative w-5 h-5 align-middle" 
                     (click)="lightModeInput.focus(); lightModeInput.click(); images = lightImages">
                     <span [ngClass]="{ 'ring-2 ring-offset-2 ring-offset-slate-200 dark:ring-offset-slate-950': isLightMode }" 
                     class="bg-gray-50 absolute top-0 left-0 w-full h-full rounded-full"></span>
                 </button>
             </div>
-            <div class="relative leading-5 align-middle">
-                <input #darkModeInput class="peer/dark absolute top-1 left-1" type="radio" name="mode" [(ngModel)]="isLightMode" [value]="false" />
+            <div class="relative leading-4 align-middle">
+                <input #darkModeInput class="peer/dark absolute top-0.5 left-0.5" type="radio" name="mode" [(ngModel)]="isLightMode" [value]="false" />
                 <button class="peer-focus/dark:ring-2 ring-offset-6 ring-offset-slate-200 dark:ring-offset-slate-950 rounded-full relative w-5 h-5 align-middle"
                     (click)="darkModeInput.focus(); darkModeInput.click(); images = darkImages">
                     <span [ngClass]="{ 'ring-2 ring-offset-2 ring-offset-slate-200 dark:ring-offset-slate-950': !isLightMode }" 
@@ -32,10 +32,10 @@
     }
 
     @if (images.length > 1 || lightImages.length > 1 || darkImages.length > 1) {
-        <button [disabled]="disableLeftButton" class="disabled:opacity-50 mx-2 text-2xl h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800" (click)="scrollLeft()">
+        <button [disabled]="disableLeftButton" class="disabled:opacity-50 mx-2 h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800" (click)="scrollLeft()">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button [disabled]="disableRightButton" class="disabled:opacity-50 mx-2 text-2xl h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800" (click)="scrollRight()">
+        <button [disabled]="disableRightButton" class="disabled:opacity-50 mx-2 h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800" (click)="scrollRight()">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
     }

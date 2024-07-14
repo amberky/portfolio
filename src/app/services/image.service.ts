@@ -34,12 +34,12 @@ export class ImageService {
         caption.innerHTML = title || '';
 
         const closeButton = document.createElement('button');
-        closeButton.className = 'self-end px-4';
+        closeButton.className = 'ps-4';
         closeButton.innerHTML = '<i class="fas fa-xmark"></i>';
         closeButton.addEventListener('click', () => this.closeImageModal());
 
         const header = document.createElement('div');
-        header.className = 'flex justify-between pb-2';
+        header.className = 'flex justify-between items-start pb-2';
         header.appendChild(caption);
         header.appendChild(closeButton);
 

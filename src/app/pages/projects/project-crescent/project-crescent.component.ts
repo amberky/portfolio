@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ImageService } from '../../../services/image.service';
@@ -59,14 +59,25 @@ export class ProjectCrescentComponent implements OnInit, AfterViewInit, OnDestro
     }
 
     ngAfterViewInit(): void {
+        this.calculateWidth();
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.calculateWidth();
+    }
+
+    calculateWidth() {
         const containerWidth = this.container.nativeElement.clientWidth;
-        if (containerWidth <= 500) {
-            this.imgWidth = '300px';
-            this.scrollAmount = 300 + 16;
-        } else {
-            this.imgWidth = '500px';
-            this.scrollAmount = 500 + 16;
-        }
+        this.imgWidth = containerWidth <= 500 ? `${containerWidth}px` : '500px';
+        this.scrollAmount = containerWidth <= 500 ? containerWidth + 16 : 500 + 16;
+        // if (containerWidth <= 500) {
+        //     this.imgWidth = '300px';
+        //     this.scrollAmount = 300 + 16;
+        // } else {
+        //     this.imgWidth = '500px';
+        //     this.scrollAmount = 500 + 16;
+        // }
         this.cdRef.detectChanges();
     }
 
