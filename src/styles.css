@@ -19,8 +19,20 @@
         @apply font-semibold text-4xl;
     }
 
-    h2, h3, h4, h5 {
-        @apply font-semibold;
+    h2 {
+        @apply font-semibold text-3xl;
+    }
+
+    h3 {
+        @apply font-semibold text-2xl;
+    }
+
+    h4 {
+        @apply font-semibold text-xl;
+    }
+
+    h5 {
+        @apply font-semibold text-lg;
     }
 
     h6 {
@@ -37,5 +49,13 @@
     
     ::selection {
         @apply bg-blue-50 text-black;
+    }
+}
+
+@layer components {
+    .tooltip {
+        @apply scale-0 transition duration-100
+                absolute -top-7 left-0 text-xs whitespace-nowrap
+                bg-black text-white rounded-md py-0.5 px-2 border-1 border-stone-800;
     }
 }

@@ -1,0 +1,73 @@
+<h5 class="mb-2">About me</h5>
+<p class="mb-2">
+    I am a full stack web developer with a passion for creating interactive and responsive web applications.
+</p>
+<p class="mb-2">
+    My journey into the world of coding began in 2009 when I started creating Google Blogger themes. 
+    This initial step quickly turned into a passion for coding and today, I am a software engineer with over 6 years of experience.
+</p>
+<p class="mb-2">
+    I thrive on building applications from scratch with a particular enthusiasm for when engineering and design come together to create seamless user experiences.
+    My work is driven by the belief that technology should enhance and simplify the user's life. 
+</p>
+<p class="mb-2">
+    Throughout my career, I've learned the value of work-life harmony and the benefits of remote work, which allow for greater flexibility and productivity. I am especially interested in working with medium-sized companies that uphold these principles and foster a collaborative environment. I invite you to explore my portfolio. 
+    If my work resonates with you, I would love to connect and discuss how we can work together.
+</p>
+
+<div class="mt-10 mb-4">
+    <span class="cursor-pointer me-4" [class.active]="activeTab == 'exp'" (click)="changeActiveTab('exp')">Experiences</span>
+    <span class="cursor-pointer me-4" [class.active]="activeTab == 'edu'" (click)="changeActiveTab('edu')">Education</span>
+</div>
+
+@if (activeTab == 'exp') {
+    <div class="transition-opacity duration-300 ml-4" [ngClass]="{
+        'opacity-0': !visible,
+        'opacity-100': visible
+    }">
+    <ul class="list-disc *:mb-2">
+        <li class="*:mb-1">
+            <div>Software Engineer</div>
+            <div class="text-gray-500 dark:text-gray-400">Aug 2021 - Present | Yell Research Sdn Bhd | Remote (Kuala Lumpur)</div>
+        </li>
+        <li class="*:mb-1">
+            <div>Software Engineer</div>
+            <div class="text-gray-500 dark:text-gray-400">Dec 2017 - Jul 2019 | Kerry Logistics Network | Penang</div>
+        </li>
+        <li class="*:mb-1">
+            <div>Programmer</div>
+            <div class="text-gray-500 dark:text-gray-400">Apr 2016 - Dec 2017 | Priority Resources Sdn Bhd | Penang</div>
+        </li>
+    </ul>
+    </div>
+}
+
+@if (activeTab == 'edu') {
+    <div class="transition-opacity duration-300 ml-4" [ngClass]="{
+        'opacity-0': !visible,
+        'opacity-100': visible
+    }">
+        <ul class="list-disc *:mb-2">
+            <li>
+                <div>Bachelor of Information System</div>
+                <div class="text-gray-500 dark:text-gray-400">2015 - 2019 | Wawasan Open University</div>
+            </li>
+            <li>
+                <div>Diploma in Business Information System</div>
+                <div class="text-gray-500 dark:text-gray-400">2012 - 2014 | Tunku Abdul Rahman University College</div>
+            </li>
+        </ul>
+    </div>
+}
+
+<div class="mt-8">
+    <a class="group relative hover:bg-slate-200 dark:hover:bg-slate-800 px-4 py-2 -left-4 rounded-full" 
+        href="assets/amber_eu_resume_fed.pdf" download="amber_eu_resume_fed.pdf">
+        <i class="fa-solid fa-file-pdf pe-2"></i>
+        Download resume
+        <span class="group-hover:opacity-100 opacity-0 
+                    group-hover:scale-105 tooltip">
+            Grab my resume!
+        </span>
+    </a>
+</div>

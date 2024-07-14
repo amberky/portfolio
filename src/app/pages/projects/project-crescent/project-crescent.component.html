@@ -1,0 +1,78 @@
+<div #container class="text-center mb-10" data-aos="fade-up">
+    <h1>🌘 Crescent</h1>
+    <div class="text-gray-500 dark:text-gray-400 italic">
+        A personal project management tool for organising tasks and projects.
+    </div>
+</div>
+
+<div>
+    <h6 class="mb-4">Architecture</h6>
+    <div class="mb-4">Client-Side</div>
+    <ul class="list-disc *:mb-2 ms-4">
+        <li class="*:mb-1">Frontend Framework: The user interface is built with Angular 17.</li>
+        <li class="*:mb-1">Styling: Utilises Tailwind CSS for responsive design, supporting both light and dark themes.</li>
+        <li class="*:mb-1">State Management: Managed using NgRx in combination with RxJS observables.</li>
+    </ul>
+
+    <div class="pt-4 mb-4">Server-Side</div>
+    <ul class="list-disc *:mb-2 ms-4">
+        <li class="*:mb-1">Backend Framework: Developed with FastAPI in Python, leveraging SwaggerUI for interactive API documentation.</li>
+        <li class="*:mb-1">Database: Data is stored in a NoSQL MongoDB database.</li>
+        <li class="*:mb-1">Authentication: Implemented using OAuth 2.0 with Google and JWT tokens.</li>
+        <li class="*:mb-1">Email Service: Utilises Gmail API to send email to users for account verification and password reset.</li>
+    </ul>
+</div>
+
+<div class="mt-10">
+    <h6 class="mb-4">User Authentication</h6>
+    <div class="text-sm mb-4">Support for Google OAuth 2.0 and username/password login</div>
+    <ul class="list-disc *:mb-2 ms-4">
+        <li class="text-sm text-gray-500 dark:text-gray-400">
+            The user can sign in using their Google account or by creating a new account with a username and password. 
+        </li>
+        <li class="text-sm text-gray-500 dark:text-gray-400">
+            The user can also reset their password if they forget it.
+        </li>
+        <li class="text-sm text-gray-500 dark:text-gray-400">
+            Account registered with username/password needs to be verified via email.
+        </li>
+    </ul>
+    <app-img-gallery class="mt-4 block" data-aos="fade-up"
+        [canSwitchMode]="true"
+        [lightImages]="lightAuthImages" [darkImages]="darkAuthImages" 
+        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" 
+    />
+</div>
+
+<div class="mt-10">
+    <h6 class="mb-4">Project Management</h6>
+    <div class="text-sm mb-4">Create, update, and delete projects</div>
+    <ul class="list-disc *:mb-2 ms-4">
+        <li class="text-sm text-gray-500 dark:text-gray-400">
+            The user can create a new project, update the project details, and move the project to the trash.
+        </li>
+        <li class="text-sm text-gray-500 dark:text-gray-400">
+            The user can also select the project icon (emoji) to represent the project.
+        </li>
+    </ul>
+    <app-img-gallery class="mt-4 block" data-aos="fade-up"
+        [canSwitchMode]="true"
+        [lightImages]="lightProjImages" [darkImages]="darkProjImages" 
+        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" 
+    />
+</div>
+
+<div class="mt-10">
+    <h6 class="mb-4">Tasks Management</h6>
+    <div class="text-sm mb-4">Create, update, and delete tasks</div>
+    <ul class="list-disc *:mb-2 ms-4">
+        <li class="text-sm text-gray-500 dark:text-gray-400">
+            Support viewing tasks in board view, calendar view (monthly and weekly), and table view.
+        </li>
+    </ul>
+    <app-img-gallery class="mt-4 block" data-aos="fade-up"
+        [canSwitchMode]="true"
+        [lightImages]="lightTaskImages" [darkImages]="darkTaskImages" 
+        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" 
+    />
+</div>

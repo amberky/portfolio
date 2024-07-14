@@ -1,0 +1,20 @@
+.typing {
+    width: fit-content;
+    padding-right: 0.15rem;
+    border-right: 0.15rem solid blue;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+.active {
+    @apply border-b-2 border-blue-400 pb-1;
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+
+    50% {
+        @apply border-blue-600;
+    }
+}

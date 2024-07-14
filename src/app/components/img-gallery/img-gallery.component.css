@@ -1,0 +1,9 @@
+.img-container {
+    @apply max-h-80 rounded-lg p-4 bg-slate-100 dark:bg-slate-700 me-4 flex flex-col justify-center;
+    width: min-content;
+}
+
+.img-container img {
+    object-fit: contain;
+    overflow: hidden;
+}

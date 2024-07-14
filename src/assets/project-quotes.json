@@ -1,0 +1,67 @@
+{
+    "iPhone65Images": [
+        {
+            "src": "/assets/projects/quotes/iphone_6.5_1.png",
+            "caption": "Quotes App"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_6.5_3.png",
+            "caption": "Swipe to mark as favorite"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_6.5_2.png",
+            "caption": "Select multiple quotes to manage"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_6.5_4.png",
+            "caption": "Organise quotes by collections"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_6.5_5.png",
+            "caption": "Add new collection"
+        }
+    ],
+    "iPhone55Images": [
+        {
+            "src": "/assets/projects/quotes/iphone_5.5_1.png",
+            "caption": "Quotes App"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_5.5_2.png",
+            "caption": "Swipe to mark as favorite"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_5.5_3.png",
+            "caption": "Select multiple quotes to manage"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_5.5_4.png",
+            "caption": "Organise quotes by collections"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_5.5_5.png",
+            "caption": "Add new collection"
+        },
+        {
+            "src": "/assets/projects/quotes/iphone_5.5_6.png",
+            "caption": "Preview a quote"
+        }
+    ],
+    "watchImages": [
+        {
+            "src": "/assets/projects/quotes/watch_2.png"
+        },
+        {
+            "src": "/assets/projects/quotes/watch_1.png",
+            "caption": "Favorite quotes"
+        },
+        {
+            "src": "/assets/projects/quotes/watch_3.png",
+            "caption": "Preview a quote"
+        },
+        {
+            "src": "/assets/projects/quotes/watch_4.png",
+            "caption": "Sync quotes"
+        }
+    ]
+}

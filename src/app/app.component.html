@@ -1,34 +1,59 @@
-<div class="w-full lg:w-[1000px] mx-auto pt-12">
-    <nav #nav class="px-12 flex flex-col md:flex-row md:justify-between">
-        <ul>
-            <li class="pb-5 md:pb-0">
-                <a href="#about"><span class="font-semibold text-4xl md:text-base">Amber</span></a>
-                <div class="block md:hidden">Software developer</div>
-            </li>
-        </ul>
-        <ul class="flex flex-col md:flex-row">
-            <li class="md:ms-4" [class.nav-active]="activeLink == '#skills'"><a href="#skills" (click)="activeLink = '#skills'">Skills</a></li>
-            <li class="md:ms-4" [class.nav-active]="activeLink == '#projects'"><a href="#projects" (click)="activeLink = '#projects'">Projects</a></li>
-            <li class="md:ms-4" [class.nav-active]="activeLink == '#experience'"><a href="#experience" (click)="activeLink = '#experience'">Experience</a></li>
-            <li class="md:ms-4" [class.nav-active]="activeLink == '#contact'"><a href="#contact" (click)="activeLink = '#contact'">Contact</a></li>
-        </ul>
-    </nav>
+<div class="relative w-full lg:w-[1000px] mx-auto">
+    @if (!isMobileView) {
+        <nav class="fixed bg-white dark:bg-stone-950 h-12 z-[9999] w-[inherit] px-12 flex flex-row justify-between items-center">
+            <ul>
+                <li class="py-1">
+                    <a href="/" class="font-semibold text-base">Amber</a>
+                </li>
+            </ul>
+            
+            <ul class="flex flex-row">
+                <li class="ms-4 py-1" [class.active]="activeLink == '#about'"><a href="#about" (click)="activeLink = '#about'">About</a></li>
+                <li class="ms-4 py-1" [class.active]="activeLink == '#skills'"><a href="#skills" (click)="activeLink = '#skills'">Skills</a></li>
+                <li class="ms-4 py-1" [class.active]="activeLink == '#projects'"><a href="#projects" (click)="activeLink = '#projects'">Projects</a></li>
+                <li class="ms-4 py-1" [class.active]="activeLink == '#contact'"><a href="#contact" (click)="activeLink = '#contact'">Contact</a></li>
+            </ul>
+        </nav>
+    } @else {
+        <nav class="fixed bg-white dark:bg-stone-950 h-12 z-[9999] w-[inherit] flex justify-end">
+            <button class="p-4" (click)="navExpand = !navExpand; showContent = !showContent">
+                <i [ngClass]="{
+                    'fa-bars': !navExpand,
+                    'fa-xmark': navExpand
+                }" class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    }
+
+    @if (navExpand) {
+        <div class="pt-20 px-12">
+            <ul>
+                <li class="pb-5 md:pb-0">
+                    <div class="font-semibold text-4xl text-center">Amber</div>
+                    <div class="text-sm text-center">Software Developer</div>
+                </li>
+            </ul>
+            
+            <ul class="flex flex-col items-center">
+                <li class="pb-4" [class.active]="activeLink == '#about'"><a href="#about" (click)="closeNav(); activeLink = '#about'">About</a></li>
+                <li class="pb-4" [class.active]="activeLink == '#skills'"><a href="#skills" (click)="closeNav(); activeLink = '#skills'">Skills</a></li>
+                <li class="pb-4" [class.active]="activeLink == '#projects'"><a href="#projects" (click)="closeNav(); activeLink = '#projects'">Projects</a></li>
+                <li class="pb-4" [class.active]="activeLink == '#contact'"><a href="#contact" (click)="closeNav(); activeLink = '#contact'">Contact</a></li>
+            </ul>
+        </div>
+    }
     
-    <div class="px-12 pb-20">
-        <app-about class="block pt-10" id="about" />
-        <app-skills class="block pt-10" id="skills" />
-        <app-projects class="block pt-10" id="projects" />
-    
-        <app-experience class="block pt-10" id="experience" />
-        <app-education class="block pt-10" id="education" />
-        <app-contact class="block pt-10" id="contact" />
-    </div>
-    <button class="bg-blue-200 w-10 h-10 rounded-full text-white dark:text-slate-600 fixed right-4 bottom-4 transition-opacity duration-200"
-        [ngClass]="{
-            'opacity-1': canScrollToTop,
-            'opacity-0': !canScrollToTop
-        }"
-        (click)="scrollToTop()">
-        <i class="text-lg fa-solid fa-arrow-up"></i>
-    </button>
+    @if (showContent) {
+        <div class="pt-20 px-6 lg:px-12 pb-40">
+            <router-outlet></router-outlet>
+        </div>
+        <button class="bg-blue-200 w-10 h-10 rounded-full text-white dark:text-slate-600 fixed right-4 bottom-4 transition-opacity duration-200"
+            [ngClass]="{
+                'opacity-1': canScrollToTop,
+                'opacity-0': !canScrollToTop
+            }"
+            (click)="scrollToTop()">
+            <i class="text-lg fa-solid fa-arrow-up"></i>
+        </button>
+    }
 </div>
