@@ -26,8 +26,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     canScrollToTop: boolean = window.scrollY > 0;
 
     isMobileView!: boolean;
-    showContent: boolean = true;
     navExpand: boolean = false;
+    showMobileNav: boolean = false;
 
     private subscription: Subscription;
 
@@ -57,8 +57,16 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         window.scroll(0, 0);
     }
 
+    toggleNav(): void {
+        this.showMobileNav = !this.showMobileNav;
+
+        setTimeout(() => {
+            this.navExpand = this.showMobileNav;
+        }, 0);
+    }
+
     closeNav(): void {
         this.navExpand = false;
-        this.showContent = true;
+        this.showMobileNav = false;
     }
 }
