@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ImageService } from '../../services/image.service';
@@ -11,7 +11,7 @@ import { ImageService } from '../../services/image.service';
     templateUrl: './img-gallery.component.html',
     styleUrl: './img-gallery.component.css'
 })
-export class ImageGalleryComponent implements OnChanges {
+export class ImageGalleryComponent implements OnChanges, AfterViewInit {
     isLightMode: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
     @Input() canSwitchMode: boolean = false;
@@ -21,14 +21,11 @@ export class ImageGalleryComponent implements OnChanges {
     @Input() imgWidth!: string | null;
     @Input() scrollAmount: number = 0;
 
-    translateXValue: number = 0;
-    previewImage: string = '';
-
     disableLeftButton: boolean = true;
     disableRightButton: boolean = false;
     
     @ViewChild('imgTrack', { static: true }) imgTrack!: ElementRef;
-    @ViewChild('imgContainer', { static: true }) imgContainer!: ElementRef;
+    @ViewChild('imgTrackContainer', { static: true }) imgTrackContainer!: ElementRef;
 
     constructor(public imgService: ImageService) {}
 
@@ -36,30 +33,40 @@ export class ImageGalleryComponent implements OnChanges {
         this.images = this.canSwitchMode ? this.isLightMode ? this.lightImages : this.darkImages : this.images;
     }
 
-    scrollLeft() {
-        this.translateXValue += this.scrollAmount;
-        this.disableLeftButton = false;
-        this.disableRightButton = false;
+    ngAfterViewInit(): void {
+        this.imgTrackContainer.nativeElement.addEventListener('scroll', this.onScroll.bind(this));
+    }
 
-        if (this.translateXValue >= 0) {
-            this.translateXValue = 0;
-            this.disableLeftButton = true;
-        }
+    onScroll() {
+        this.updateButtonStates();
+    }
+
+    updateButtonStates() {
+        const scrollLeft = this.imgTrackContainer.nativeElement.scrollLeft;
+        const maxScrollLeft = this.maxScrollPosition();
+    
+        this.disableLeftButton = scrollLeft <= 0;
+        this.disableRightButton = scrollLeft >= maxScrollLeft;
+    }
+
+    scrollLeft() {
+        const newScrollPosition = this.imgTrackContainer.nativeElement.scrollLeft - this.scrollAmount;
+        this.imgTrackContainer.nativeElement.scrollTo({
+            left: newScrollPosition,
+            behavior: 'smooth'
+        });
     }
   
     scrollRight() {
-        this.translateXValue -= this.scrollAmount;
-        this.disableLeftButton = false;
-        this.disableRightButton = false;
-        
-        if (Math.abs(this.translateXValue) >= this.maxScrollPosition()) {
-            this.translateXValue = -this.maxScrollPosition();
-            this.disableRightButton = true;
-        }
+        const newScrollPosition = this.imgTrackContainer.nativeElement.scrollLeft + this.scrollAmount;
+        this.imgTrackContainer.nativeElement.scrollTo({
+            left: newScrollPosition,
+            behavior: 'smooth'
+        });
     }
     
     maxScrollPosition(): number {
-        const max = this.imgTrack.nativeElement.scrollWidth - this.imgContainer.nativeElement.clientWidth;
+        const max = this.imgTrack.nativeElement.scrollWidth - this.imgTrackContainer.nativeElement.clientWidth;
         return max;
     }
 }

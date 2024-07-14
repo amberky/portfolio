@@ -1,3 +1,24 @@
+.img-track-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    --webkit-scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.img-track {
+    scrollbar-width: none;
+    --webkit-scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.img-track-container::-webkit-scrollbar,
+.img-track::-webkit-scrollbar {
+    display: none;
+}
+
 .img-container {
     @apply max-h-80 rounded-lg p-4 bg-slate-100 dark:bg-slate-700 me-4 flex flex-col justify-center;
     width: min-content;

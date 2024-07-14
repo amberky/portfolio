@@ -31,6 +31,9 @@
                         ],
                         "scripts": [
                             "node_modules/aos/dist/aos.js"
+                        ],
+                        "allowedCommonJsDependencies": [
+                            "aos"
                         ]
                     },
                     "configurations": {

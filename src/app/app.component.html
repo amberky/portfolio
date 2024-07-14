@@ -16,7 +16,7 @@
         </nav>
     } @else {
         <nav class="fixed bg-white dark:bg-stone-950 h-12 z-[999] w-[inherit] flex justify-end">
-            <button class="p-4" (click)="toggleNav()">
+            <button class="p-4" (click)="navExpand ? closeNav() : openNav()">
                 <i [ngClass]="{
                     'fa-bars': !navExpand,
                     'fa-xmark': navExpand

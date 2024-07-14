@@ -57,16 +57,19 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         window.scroll(0, 0);
     }
 
-    toggleNav(): void {
-        this.showMobileNav = !this.showMobileNav;
+    openNav(): void {
+        this.showMobileNav = true;
 
         setTimeout(() => {
-            this.navExpand = this.showMobileNav;
+            this.navExpand = true;
         }, 0);
     }
 
     closeNav(): void {
         this.navExpand = false;
-        this.showMobileNav = false;
+
+        setTimeout(() => {
+            this.showMobileNav = false;
+        }, 500);
     }
 }

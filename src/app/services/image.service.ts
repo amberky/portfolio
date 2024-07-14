@@ -20,10 +20,14 @@ export class ImageService {
         wrapper.className = 'app-backdrop-content-wrapper overlay';
 
         const container = document.createElement('div');
-        container.className = 'w-10/12 rounded-md bg-slate-100 dark:bg-slate-700 p-4 flex flex-col';
+        container.className = 'max-w-[90vw] lg:max-w-[60vw] max-h-[90vh] rounded-md bg-slate-100 dark:bg-slate-700 p-4 flex flex-col';
         
         const img = document.createElement('img');
         img.src = imageUrl;
+
+        const imgContainer = document.createElement('div');
+        imgContainer.className = 'overflow-auto';
+        imgContainer.appendChild(img);
 
         const caption = document.createElement('div');
         caption.className = 'text-sm';
@@ -40,7 +44,7 @@ export class ImageService {
         header.appendChild(closeButton);
 
         container.appendChild(header);
-        container.appendChild(img);
+        container.appendChild(imgContainer);
 
         wrapper.appendChild(container);
 

@@ -35,6 +35,14 @@
         {
             "src": "/assets/images/projects/crescent/project-icon-light-sm.png",
             "caption": "Select an icon for a project"
+        },
+        {
+            "src": "/assets/images/projects/crescent/project-create-light.png",
+            "caption": "Create a new project"
+        },
+        {
+            "src": "/assets/images/projects/crescent/project-create-light-sm.png",
+            "caption": "Create a new project (mobile)"
         }
     ],
     "darkProjImages": [
@@ -53,6 +61,14 @@
         {
             "src": "/assets/images/projects/crescent/project-icon-dark-sm.png",
             "caption": "Select an icon for a project"
+        },
+        {
+            "src": "/assets/images/projects/crescent/project-create-dark.png",
+            "caption": "Create a new project"
+        },
+        {
+            "src": "/assets/images/projects/crescent/project-create-dark-sm.png",
+            "caption": "Create a new project (mobile)"
         }
     ],
     "lightTaskImages": [
