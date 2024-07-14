@@ -1,7 +1,3 @@
 .active {
     @apply sm:border-0 md:border-b-2 md:border-blue-400;
 }
-
-#about, #skills, #projects, #contact {
-    @apply scroll-mt-24 md:scroll-mt-0;
-}
