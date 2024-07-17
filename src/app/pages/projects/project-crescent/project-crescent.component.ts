@@ -18,7 +18,7 @@ export class ProjectCrescentComponent implements AfterViewInit {
 
     @ViewChild('container', { static: true }) container!: ElementRef;
     
-    data = this.dataService.getCrescentProject();
+    data$ = this.dataService.getCrescentProject();
 
     constructor(private cdRef: ChangeDetectorRef,
                 private dataService: DataService) {

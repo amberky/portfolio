@@ -1,0 +1,43 @@
+{
+    "data": [
+        {
+            "label": "Angular",
+            "images": ["/assets/images/skills/angular.png"]
+        },
+        {
+            "label": "Node.js",
+            "images": ["/assets/images/skills/jsIconGreen.svg"]
+        },
+        {
+            "label": "HTML & CSS",
+            "images": [
+                "/assets/images/skills/html5.png",
+                "/assets/images/skills/css3.png"
+            ]
+        },
+        {
+            "label": "TypeScript",
+            "images": ["/assets/images/skills/ts.png"]
+        },
+        {
+            "label": "JavaScript",
+            "images": ["/assets/images/skills/js.png"]
+        },
+        {
+            "label": "FastAPI",
+            "images": ["/assets/images/skills/fastapi.png"]
+        },
+        {
+            "label": "Python",
+            "images": ["/assets/images/skills/python.png"]
+        },
+        {
+            "label": "PostgreSQL",
+            "images": ["/assets/images/skills/postgresql.png"]
+        },
+        {
+            "label": "Git",
+            "images": ["/assets/images/skills/git.svg"]
+        }
+    ]
+}

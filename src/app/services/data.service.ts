@@ -2,27 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
-export interface Image {
-    src: string;
-    caption: string;
-    loaded: boolean;
-}
-
-interface CrescentProjectDataModel {
-    label: string;
-    description: string;
-    list: string[];
-    images: {
-        light: Image[],
-        dark: Image[]
-    }
-}
-
-interface QuotesProjectDataModel {
-    label: string;
-    description: string;
-    images: Image[];
-}
+import { QuotesProjectDataModel, CrescentProjectDataModel, Contact, Skill } from '../models/data.model';
 
 @Injectable({
     providedIn: 'root'
@@ -37,19 +17,25 @@ export class DataService {
             .pipe(map(res => res.projects));
     }    
 
-    getProjectQuotes(): Observable<QuotesProjectDataModel[]> {
-        return this.http.get<{ data: QuotesProjectDataModel[] }>('assets/data/project-quotes.json')
+    getProjectQuotes(): Observable<QuotesProjectDataModel> {
+        return this.http.get<{ data: QuotesProjectDataModel }>('assets/data/project-quotes.json')
             .pipe(map(res => res.data));
     }
 
-    getCrescentProject(): Observable<CrescentProjectDataModel[]> {
-        return this.http.get<{ data: CrescentProjectDataModel[] }>('assets/data/project-crescent.json')
+    getCrescentProject(): Observable<CrescentProjectDataModel> {
+        return this.http.get<{ data: CrescentProjectDataModel }>('assets/data/project-crescent.json')
             .pipe(map(res => res.data));
     }
 
-    getContacts(): Observable<{ link: string, tooltip: string, icon: string }[]> {
+    getContacts(): Observable<Contact[]> {
         return this.http
-            .get<{ contacts: { link: string, tooltip: string, icon: string }[] }>('assets/data/contacts.json')
-            .pipe(map(res => res.contacts));
+            .get<{ data: Contact[] }>('assets/data/contacts.json')
+            .pipe(map(res => res.data));
+    }
+
+    getSkills(): Observable<Skill[]> {
+        return this.http
+            .get<{ data: Skill[] }>('assets/data/skills.json')
+            .pipe(map(res => res.data));
     }
 }

@@ -13,7 +13,7 @@ export class OverviewComponent implements OnInit {
     OCCUPATION = 'Software developer';
     occupation = '';
 
-    data = this.dataService.getContacts();
+    data$ = this.dataService.getContacts();
 
     constructor(private dataService: DataService) {}
     

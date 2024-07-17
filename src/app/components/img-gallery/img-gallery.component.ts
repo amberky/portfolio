@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Image } from '../../services/data.service';
+import { Image } from '../../models/data.model';
 import { ImageService } from '../../services/image.service';
 
 @Component({

@@ -1,30 +1,41 @@
-<div #container class="text-center mb-10" data-aos="fade-up">
-    <h1>Quotes</h1>
-    <div class="text-gray-500 dark:text-gray-400 italic">
-        An iOS app to keep track of quotes that inspire and motivate you.
-    </div>
-</div>
-
-<div>
-    <h6 class="mb-4">Technologies and Tools</h6>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="*:mb-1">Programming languages: Swift 5</li>
-        <li class="*:mb-1">Version control: Git</li>
-        <li class="*:mb-1">Data storage: Core Data</li>
-    </ul>
-</div>
-
-<div class="pt-20">
-    @for (row of data | async; track row.label)  {
-        <div class="mt-10">
-            <h6 class="mb-4">{{ row.label }}</h6>
-            @if (row.description) {
-                <div class="text-sm mb-4">{{ row.description }}</div>
+<div #container>
+    @if (data$ | async; as data) {
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h1>{{ data.label }}</h1>
+            <div class="text-gray-500 dark:text-gray-400 italic">
+                {{ data.description }}
+            </div>
+        </div>
+        
+        @for (section of data.infoSections; track section.label) {
+            <div>
+                <h6 class="mb-4">{{ section.label }}</h6>
+                @for (info of section.description; track info) {
+                    <div class="pb-8">
+                        <div class="mb-4"> {{ info.label }} </div>
+                        <ul class="list-disc *:mb-2 ms-4">
+                            @for (str of info.description; track str) {
+                                <li class="*:mb-1"> {{ str }}</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        }
+        
+        <div class="pt-10">
+            @for (row of data.previews; track row.label)  {
+                <div class="mt-10">
+                    <h6 class="mb-4">{{ row.label }}</h6>
+                    @if (row.description) {
+                        <div class="text-sm mb-4">{{ row.description }}</div>
+                    }
+                    <app-img-gallery class="mt-4 block" data-aos="fade-up"
+                        [canSwitchMode]="false"
+                        [images]="row.images"
+                        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
+                </div>
             }
-            <app-img-gallery class="mt-4 block" data-aos="fade-up"
-                [canSwitchMode]="false"
-                [images]="row.images"
-                [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
         </div>
     }
 </div>

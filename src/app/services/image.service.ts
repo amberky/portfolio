@@ -4,14 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class ImageService {
-    private backdrop: any;
-
-    preloadImages(imageUrls: string[]): void {
-        for (const img of imageUrls) {
-            const image = new Image();
-            image.src = img;
-        }
-    }
+    private backdrop!: HTMLDivElement | null;
 
     openImageModal(imageUrl: string, title?: string): void {
         this.backdrop = document.createElement('div');

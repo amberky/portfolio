@@ -8,7 +8,7 @@
         <div class="text-xl">From Penang, Malaysia</div>
 
         <div class="pt-10 flex">
-            @for (contact of data | async; let index = $index; track index) {
+            @for (contact of data$ | async; let index = $index; track index) {
                 <a class="group relative me-5 hover:scale-105" [href]="contact.link" target="_blank">
                     <i class="text-md" [ngClass]="contact.icon"></i>
                     <span class="group-hover:opacity-100 opacity-0 

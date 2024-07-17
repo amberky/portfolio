@@ -1,53 +1,50 @@
-<div #container class="text-center mb-10" data-aos="fade-up">
-    <h1>🌘 Crescent</h1>
-    <div class="text-gray-500 dark:text-gray-400 italic">
-        A personal project management tool for organising tasks and projects.
-    </div>
-</div>
-
-<div>
-    <h6 class="mb-4">Technologies and Tools</h6>
-    <div class="mb-4">Client-Side</div>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="*:mb-1">Frontend Framework: The user interface is built with Angular 17.</li>
-        <li class="*:mb-1">Styling: Utilises Tailwind CSS for responsive design, supporting both light and dark themes.</li>
-        <li class="*:mb-1">State Management: Managed using NgRx in combination with RxJS observables.</li>
-    </ul>
-
-    <div class="pt-4 mb-4">Server-Side</div>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="*:mb-1">Backend Framework: Developed with FastAPI in Python, leveraging SwaggerUI for interactive API documentation.</li>
-        <li class="*:mb-1">Database: Data is stored in a NoSQL MongoDB database.</li>
-        <li class="*:mb-1">Authentication: Implemented using OAuth 2.0 with Google and JWT tokens.</li>
-        <li class="*:mb-1">Email Service: Utilises Gmail API to send email to users for account verification and password reset.</li>
-    </ul>
-
-    <div class="pt-4 mb-4">Source Control</div>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="*:mb-1">Version Control: Managed with Git and hosted on GitHub.</li>
-    </ul>
-</div>
-
-<div class="pt-20">
-    @for (row of data | async; track row.label)  {
-        <div class="mt-10">
-            <h6 class="mb-4">{{ row.label }}</h6>
-            @if (row.description) {
-                <div class="text-sm mb-4">{{ row.description }}</div>
-            }
-            @if (row.list) {
-                <ul class="list-disc *:mb-2 ms-4">
-                    @for (item of row.list; track item) {
-                        <li class="text-sm text-gray-500 dark:text-gray-400">
-                            {{ item }}
-                        </li>
+<div #container>
+    @if (data$ | async; as data) {
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h1>{{ data.label }}</h1>
+            <div class="text-gray-500 dark:text-gray-400 italic">
+                {{ data.description }}
+            </div>
+        </div>
+    
+        @for (section of data.infoSections; track section.label) {
+            <div>
+                <h6 class="mb-4">{{ section.label }}</h6>
+                @for (info of section.description; track info) {
+                    <div class="pb-8">
+                        <div class="mb-4"> {{ info.label }} </div>
+                        <ul class="list-disc *:mb-2 ms-4">
+                            @for (str of info.description; track str) {
+                                <li class="*:mb-1"> {{ str }}</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        }
+    
+        <div class="pt-10">
+            @for (row of data.previews; track row.label)  {
+                <div class="mt-10">
+                    <h6 class="mb-4">{{ row.label }}</h6>
+                    @if (row.description) {
+                        <div class="text-sm mb-4">{{ row.description }}</div>
                     }
-                </ul>
+                    @if (row.list) {
+                        <ul class="list-disc *:mb-2 ms-4">
+                            @for (item of row.list; track item) {
+                                <li class="text-sm text-gray-500 dark:text-gray-400">
+                                    {{ item }}
+                                </li>
+                            }
+                        </ul>
+                    }
+                    <app-img-gallery class="mt-4 block" data-aos="fade-up"
+                        [canSwitchMode]="true"
+                        [lightImages]="row.images.light" [darkImages]="row.images.dark" 
+                        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
+                </div>
             }
-            <app-img-gallery class="mt-4 block" data-aos="fade-up"
-                [canSwitchMode]="true"
-                [lightImages]="row.images.light" [darkImages]="row.images.dark" 
-                [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
         </div>
     }
 </div>

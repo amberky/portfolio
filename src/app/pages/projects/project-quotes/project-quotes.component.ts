@@ -17,7 +17,7 @@ export class ProjectQuotesComponent implements AfterViewInit {
 
     @ViewChild('container', { static: true }) container!: ElementRef;
 
-    data = this.dataService.getProjectQuotes();
+    data$ = this.dataService.getProjectQuotes();
 
     constructor(private cdRef: ChangeDetectorRef,
                 private dataService: DataService) {

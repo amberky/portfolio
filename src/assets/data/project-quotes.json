@@ -1,79 +1,97 @@
 {
-    "data": [
-        {
-            "label": "iPhone (6.5”)",
-            "images": [
-                {
-                    "src": "/assets/images/projects/quotes/iphone_6.5_1.png",
-                    "caption": "Quotes App"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_6.5_3.png",
-                    "caption": "Swipe to mark as favorite"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_6.5_2.png",
-                    "caption": "Select multiple quotes to manage"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_6.5_4.png",
-                    "caption": "Organise quotes by collections"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_6.5_5.png",
-                    "caption": "Add new collection"
-                }
-            ]
-        },
-        {
-            "label": "iPhone (5.5”)",
-            "images": [
-                {
-                    "src": "/assets/images/projects/quotes/iphone_5.5_1.png",
-                    "caption": "Quotes App"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_5.5_2.png",
-                    "caption": "Swipe to mark as favorite"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_5.5_3.png",
-                    "caption": "Select multiple quotes to manage"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_5.5_4.png",
-                    "caption": "Organise quotes by collections"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_5.5_5.png",
-                    "caption": "Add new collection"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/iphone_5.5_6.png",
-                    "caption": "Preview a quote"
-                }
-            ]
-        },
-        {
-            "label": "Apple watch",
-            "description": "View quotes on your wrist",
-            "images": [
-                {
-                    "src": "/assets/images/projects/quotes/watch_2.png"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/watch_1.png",
-                    "caption": "Favorite quotes"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/watch_3.png",
-                    "caption": "Preview a quote"
-                },
-                {
-                    "src": "/assets/images/projects/quotes/watch_4.png",
-                    "caption": "Sync quotes"
-                }
-            ]
-        }
-    ]
+    "data": {
+        "label": "Quotes",
+        "description": "An iOS app to keep track of quotes that inspire and motivate you.",
+        "infoSections": [
+            {
+                "label": "Technologies and Tools",
+                "description": [
+                    {
+                        "description": [
+                            "Programming languages: Swift 5",
+                            "Version control: Git",
+                            "Data storage: Core Data"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "previews": [
+            {
+                "label": "iPhone (6.5”)",
+                "images": [
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_6.5_1.png",
+                        "caption": "Quotes App"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_6.5_3.png",
+                        "caption": "Swipe to mark as favorite"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_6.5_2.png",
+                        "caption": "Select multiple quotes to manage"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_6.5_4.png",
+                        "caption": "Organise quotes by collections"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_6.5_5.png",
+                        "caption": "Add new collection"
+                    }
+                ]
+            },
+            {
+                "label": "iPhone (5.5”)",
+                "images": [
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_5.5_1.png",
+                        "caption": "Quotes App"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_5.5_2.png",
+                        "caption": "Swipe to mark as favorite"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_5.5_3.png",
+                        "caption": "Select multiple quotes to manage"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_5.5_4.png",
+                        "caption": "Organise quotes by collections"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_5.5_5.png",
+                        "caption": "Add new collection"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/iphone_5.5_6.png",
+                        "caption": "Preview a quote"
+                    }
+                ]
+            },
+            {
+                "label": "Apple watch",
+                "description": "View quotes on your wrist",
+                "images": [
+                    {
+                        "src": "/assets/images/projects/quotes/watch_2.png"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/watch_1.png",
+                        "caption": "Favorite quotes"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/watch_3.png",
+                        "caption": "Preview a quote"
+                    },
+                    {
+                        "src": "/assets/images/projects/quotes/watch_4.png",
+                        "caption": "Sync quotes"
+                    }
+                ]
+            }
+        ]
+    }
 }

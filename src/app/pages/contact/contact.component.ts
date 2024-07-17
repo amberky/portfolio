@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
     styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-    data = this.dataService.getContacts();
+    data$ = this.dataService.getContacts();
 
     constructor(private dataService: DataService) {}
 }
