@@ -14,17 +14,17 @@
         <div class="flex items-center h-10 rounded-full px-3 bg-slate-200 dark:bg-slate-800 mx-2 *:mx-2">
             <div class="relative leading-4 align-middle">
                 <input #lightModeInput class="peer/light absolute top-0.5 left-0.5" type="radio" name="mode" [(ngModel)]="isLightMode" [value]="true" />
-                <button class="peer-focus/light:ring-2 ring-offset-6 ring-offset-slate-200 dark:ring-offset-slate-950 rounded-full relative w-5 h-5 align-middle" 
+                <button class="peer-focus/light:ring-2 ring-offset-6 ring-offset-slate-200 dark:ring-offset-slate-900 rounded-full relative w-5 h-5 align-middle" 
                     (click)="lightModeInput.focus(); lightModeInput.click(); images = lightImages">
-                    <span [ngClass]="{ 'ring-2 ring-offset-2 ring-offset-slate-200 dark:ring-offset-slate-950': isLightMode }" 
+                    <span [ngClass]="{ 'ring-2 ring-offset-2 ring-offset-slate-200 dark:ring-offset-slate-900': isLightMode }" 
                     class="bg-gray-50 absolute top-0 left-0 w-full h-full rounded-full"></span>
                 </button>
             </div>
             <div class="relative leading-4 align-middle">
                 <input #darkModeInput class="peer/dark absolute top-0.5 left-0.5" type="radio" name="mode" [(ngModel)]="isLightMode" [value]="false" />
-                <button class="peer-focus/dark:ring-2 ring-offset-6 ring-offset-slate-200 dark:ring-offset-slate-950 rounded-full relative w-5 h-5 align-middle"
+                <button class="peer-focus/dark:ring-2 ring-offset-6 ring-offset-slate-200 dark:ring-offset-slate-900 rounded-full relative w-5 h-5 align-middle"
                     (click)="darkModeInput.focus(); darkModeInput.click(); images = darkImages">
-                    <span [ngClass]="{ 'ring-2 ring-offset-2 ring-offset-slate-200 dark:ring-offset-slate-950': !isLightMode }" 
+                    <span [ngClass]="{ 'ring-2 ring-offset-2 ring-offset-slate-200 dark:ring-offset-slate-900': !isLightMode }" 
                     class="bg-slate-700 absolute top-0 left-0 w-full h-full rounded-full"></span>
                 </button>
             </div>

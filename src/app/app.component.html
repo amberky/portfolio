@@ -1,6 +1,6 @@
 <div class="relative w-full lg:w-[1000px] mx-auto">
     @if (!isMobileView) {
-        <nav class="fixed bg-white dark:bg-stone-950 h-12 z-[999] w-[inherit] px-12 flex flex-row justify-between items-center">
+        <nav class="fixed bg-white dark:bg-stone-900 h-12 z-[999] w-[inherit] px-12 flex flex-row justify-between items-center">
             <ul>
                 <li class="py-1">
                     <a href="/" class="font-semibold text-base">Amber</a>
@@ -15,7 +15,7 @@
             </ul>
         </nav>
     } @else {
-        <nav class="fixed bg-white dark:bg-stone-950 h-12 z-[999] w-[inherit] flex justify-end">
+        <nav class="fixed bg-white dark:bg-stone-900 h-12 z-[999] w-[inherit] flex justify-end">
             <button class="p-4" (click)="navExpand ? closeNav() : openNav()">
                 <i [ngClass]="{
                     'fa-bars': !navExpand,
@@ -26,7 +26,7 @@
     }
 
     @if (showMobileNav) {
-        <div class="fixed bg-white dark:bg-stone-950 z-[998] overflow-hidden w-screen pt-20 px-12
+        <div class="fixed bg-white dark:bg-stone-900 z-[998] overflow-hidden w-screen pt-20 px-12
             transition-[height] duration-500 ease-in-out"
             [ngClass]="{
                 'h-screen': navExpand,
@@ -34,7 +34,7 @@
             }">
             <ul>
                 <li class="pb-5 md:pb-0">
-                    <div class="font-semibold text-4xl text-center">Amber</div>
+                    <div class="font-semibold text-4xl text-center"><a href="/">Amber</a></div>
                     <div class="text-sm text-center">Software Developer</div>
                 </li>
             </ul>
