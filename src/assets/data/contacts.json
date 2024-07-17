@@ -1,0 +1,19 @@
+{
+    "contacts": [
+        {
+            "icon": "fa-regular fa-envelope",
+            "link": "mailto:ambereu.work@gmail.com",
+            "tooltip": "Say hi!"
+        },
+        {
+            "icon": "fa-brands fa-linkedin-in",
+            "link": "https://www.linkedin.com/in/amber-eu-b11b78155",
+            "tooltip": "Let's connect!"
+        },
+        {
+            "icon": "fa-brands fa-github",
+            "link": "https://github.com/amberky",
+            "tooltip": "Explore my code playground!"
+        }
+    ]
+}

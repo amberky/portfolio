@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { Image } from '../../services/data.service';
 import { ImageService } from '../../services/image.service';
 
 @Component({
@@ -15,9 +16,9 @@ export class ImageGalleryComponent implements OnChanges, AfterViewInit {
     isLightMode: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
     @Input() canSwitchMode: boolean = false;
-    @Input() images: { src: string, status: boolean, caption: string }[] = [];
-    @Input() lightImages: { src: string, status: boolean, caption: string }[] = [];
-    @Input() darkImages: { src: string, status: boolean, caption: string }[] = [];
+    @Input() images: Image[] = [];
+    @Input() lightImages: Image[] = [];
+    @Input() darkImages: Image[] = [];
     @Input() imgWidth!: string | null;
     @Input() scrollAmount: number = 0;
 

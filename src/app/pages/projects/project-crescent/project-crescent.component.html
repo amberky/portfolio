@@ -28,56 +28,26 @@
     </ul>
 </div>
 
-<div class="pt-32">
-    <h6 class="mb-4">User Authentication</h6>
-    <div class="text-sm mb-4">Support for Google OAuth 2.0 and username/password login</div>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            The user can sign in using their Google account or by creating a new account with a username and password. 
-        </li>
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            The user can also reset their password if they forget it.
-        </li>
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            Account registered with username/password needs to be verified via email.
-        </li>
-    </ul>
-    <app-img-gallery class="mt-4 block" data-aos="fade-up"
-        [canSwitchMode]="true"
-        [lightImages]="lightAuthImages" [darkImages]="darkAuthImages" 
-        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
-</div>
-
-<div class="mt-10">
-    <h6 class="mb-4">Project Management</h6>
-    <div class="text-sm mb-4">Create, update, and delete projects</div>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            The user can create a new project, update the project details, and move the project to the trash.
-        </li>
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            The user can also select the project icon (emoji) to represent the project.
-        </li>
-    </ul>
-    <app-img-gallery class="mt-4 block" data-aos="fade-up"
-        [canSwitchMode]="true"
-        [lightImages]="lightProjImages" [darkImages]="darkProjImages" 
-        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
-</div>
-
-<div class="mt-10">
-    <h6 class="mb-4">Tasks Management</h6>
-    <div class="text-sm mb-4">Create, update, and delete tasks</div>
-    <ul class="list-disc *:mb-2 ms-4">
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            Support viewing tasks in board view, calendar view (monthly and weekly), and table view.
-        </li>
-        <li class="text-sm text-gray-500 dark:text-gray-400">
-            Set due date, prority, and breakdown tasks into subtasks.
-        </li>
-    </ul>
-    <app-img-gallery class="mt-4 block" data-aos="fade-up"
-        [canSwitchMode]="true"
-        [lightImages]="lightTaskImages" [darkImages]="darkTaskImages" 
-        [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
+<div class="pt-20">
+    @for (row of data | async; track row.label)  {
+        <div class="mt-10">
+            <h6 class="mb-4">{{ row.label }}</h6>
+            @if (row.description) {
+                <div class="text-sm mb-4">{{ row.description }}</div>
+            }
+            @if (row.list) {
+                <ul class="list-disc *:mb-2 ms-4">
+                    @for (item of row.list; track item) {
+                        <li class="text-sm text-gray-500 dark:text-gray-400">
+                            {{ item }}
+                        </li>
+                    }
+                </ul>
+            }
+            <app-img-gallery class="mt-4 block" data-aos="fade-up"
+                [canSwitchMode]="true"
+                [lightImages]="row.images.light" [darkImages]="row.images.dark" 
+                [imgWidth]="imgWidth" [scrollAmount]="scrollAmount" />
+        </div>
+    }
 </div>

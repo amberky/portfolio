@@ -1,8 +1,8 @@
-<h5 class="mb-2">My Hobby Projects</h5>
+<h5 class="mb-2">Hobby Projects</h5>
 <div class="text-gray-500 dark:text-gray-400 italic">A collection of my personal coding projects where I experiment with new technologies and ideas.</div>
 
 <div class="pt-10 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
-    @for (project of projects; let index = $index; track index) {
+    @for (project of projects | async; let index = $index; track index) {
         <a class="h-60 bg-slate-100 dark:bg-slate-700 rounded-xl cursor-pointer
                 flex flex-col justify-start p-4 scale-100 hover:scale-[1.01] 
                 transition-transform duration-100" 
@@ -10,7 +10,7 @@
             <div class="group h-full relative text-stone-950">
                 <img class="w-full h-full object-cover object-top" [src]="project.image" />
                 <div class="group-hover:opacity-80 opacity-0 transition-opacity duration-300
-                            w-full h-full absolute top-0 left-0 bg-gray-300"></div>
+                            w-full h-full absolute top-0 left-0 bg-gray-300 dark:bg-gray-400"></div>
                 <div class="group-hover:visible 
                             group-hover:opacity-100
                             invisible w-full h-full transition-opacity duration-300

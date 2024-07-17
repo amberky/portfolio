@@ -1,174 +1,209 @@
 {
-    "lightAuthImages": [
+    "data": [
         {
-            "src": "/assets/images/projects/crescent/login-light.png",
-            "caption": "Login page"
+            "label": "User Authentication",
+            "description": "Support for Google OAuth 2.0 and username/password login",
+            "list": [
+                "The user can sign in using their Google account or by creating a new account with a username and password. ",
+                "The user can also reset their password if they forget it.",
+                "Account registered with username/password needs to be verified via email."
+            ],
+            "images": {
+                "light": [
+                    {
+                        "src": "/assets/images/projects/crescent/login-light.png",
+                        "caption": "Login page"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/login-light-sm.png",
+                        "caption": "Login page (mobile)"
+                    }
+                ],
+                "dark": [
+                    {
+                        "src": "/assets/images/projects/crescent/login-dark.png",
+                        "caption": "Login page"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/login-dark-sm.png",
+                        "caption": "Login page (mobile)"
+                    }
+                ]
+            }
         },
         {
-            "src": "/assets/images/projects/crescent/login-light-sm.png",
-            "caption": "Login page (mobile)"
-        }
-    ],
-    "darkAuthImages": [
-        {
-            "src": "/assets/images/projects/crescent/login-dark.png",
-            "caption": "Login page"
+            "label": "Project Management",
+            "description": "Create, update, and delete projects",
+            "list": [
+                "The user can create a new project, update the project details, and move the project to the trash.",
+                "The user can also select the project icon (emoji) to represent the project."
+            ],
+            "images": {
+                "light": [
+                    {
+                        "src": "/assets/images/projects/crescent/project-overview-light.png",
+                        "caption": "Display the information of a project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-overview-light-sm.png",
+                        "caption": "Display the information of a project (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-icon-light.png",
+                        "caption": "Select an icon for a project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-icon-light-sm.png",
+                        "caption": "Select an icon for a project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-create-light.png",
+                        "caption": "Create a new project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-create-light-sm.png",
+                        "caption": "Create a new project (mobile)"
+                    }
+                ],
+
+                "dark": [
+                    {
+                        "src": "/assets/images/projects/crescent/project-overview-dark.png",
+                        "caption": "Display the information of a project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-overview-dark-sm.png",
+                        "caption": "Display the information of a project (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-icon-dark.png",
+                        "caption": "Select an icon for a project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-icon-dark-sm.png",
+                        "caption": "Select an icon for a project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-create-dark.png",
+                        "caption": "Create a new project"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-create-dark-sm.png",
+                        "caption": "Create a new project (mobile)"
+                    }
+                ]
+            }
         },
         {
-            "src": "/assets/images/projects/crescent/login-dark-sm.png",
-            "caption": "Login page (mobile)"
-        }
-    ],
-    "lightProjImages": [
-        {
-            "src": "/assets/images/projects/crescent/project-overview-light.png",
-            "caption": "Display the information of a project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-overview-light-sm.png",
-            "caption": "Display the information of a project (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-icon-light.png",
-            "caption": "Select an icon for a project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-icon-light-sm.png",
-            "caption": "Select an icon for a project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-create-light.png",
-            "caption": "Create a new project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-create-light-sm.png",
-            "caption": "Create a new project (mobile)"
-        }
-    ],
-    "darkProjImages": [
-        {
-            "src": "/assets/images/projects/crescent/project-overview-dark.png",
-            "caption": "Display the information of a project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-overview-dark-sm.png",
-            "caption": "Display the information of a project (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-icon-dark.png",
-            "caption": "Select an icon for a project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-icon-dark-sm.png",
-            "caption": "Select an icon for a project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-create-dark.png",
-            "caption": "Create a new project"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-create-dark-sm.png",
-            "caption": "Create a new project (mobile)"
-        }
-    ],
-    "lightTaskImages": [
-        {
-            "src": "/assets/images/projects/crescent/project-board-light.png",
-            "caption": "Board view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-board-light-sm.png",
-            "caption": "Board view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-month-light.png",
-            "caption": "Monthly calendar view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-month-light-sm.png",
-            "caption": "Monthly calendar view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-week-light.png",
-            "caption": "Weekly calendar view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-week-light-sm.png",
-            "caption": "Weekly calendar view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-table-light.png",
-            "caption": "Table view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-table-light-sm.png",
-            "caption": "Table view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/due-date-light.png",
-            "caption": "Select a due date for a task"
-        },
-        {
-            "src": "/assets/images/projects/crescent/due-date-light-sm.png",
-            "caption": "Select a due date for a task (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/task-view-light.png",
-            "caption": "View or edit a task"
-        },
-        {
-            "src": "/assets/images/projects/crescent/task-view-light-sm.png",
-            "caption": "View or edit a task (mobile)"
-        }
-    ],
-    "darkTaskImages": [
-        {
-            "src": "/assets/images/projects/crescent/project-board-dark.png",
-            "caption": "Board view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-board-dark-sm.png",
-            "caption": "Board view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-month-dark.png",
-            "caption": "Monthly calendar view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-month-dark-sm.png",
-            "caption": "Monthly calendar view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-week-dark.png",
-            "caption": "Weekly calendar view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-calendar-week-dark-sm.png",
-            "caption": "Weekly calendar view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-table-dark.png",
-            "caption": "Table view of tasks"
-        },
-        {
-            "src": "/assets/images/projects/crescent/project-table-dark-sm.png",
-            "caption": "Table view of tasks (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/due-date-dark.png",
-            "caption": "Select a due date for a task"
-        },
-        {
-            "src": "/assets/images/projects/crescent/due-date-dark-sm.png",
-            "caption": "Select a due date for a task (mobile)"
-        },
-        {
-            "src": "/assets/images/projects/crescent/task-view-dark.png",
-            "caption": "View or edit a task"
-        },
-        {
-            "src": "/assets/images/projects/crescent/task-view-dark-sm.png",
-            "caption": "View or edit a task (mobile)"
+            "label": "Tasks Management",
+            "description": "Create, update, and delete tasks",
+            "list": [
+                "Support viewing tasks in board view, calendar view (monthly and weekly), and table view.",
+                "Set due date, prority, and breakdown tasks into subtasks."
+            ],
+            "images": {
+                "light": [
+                    {
+                        "src": "/assets/images/projects/crescent/project-board-light.png",
+                        "caption": "Board view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-board-light-sm.png",
+                        "caption": "Board view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-month-light.png",
+                        "caption": "Monthly calendar view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-month-light-sm.png",
+                        "caption": "Monthly calendar view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-week-light.png",
+                        "caption": "Weekly calendar view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-week-light-sm.png",
+                        "caption": "Weekly calendar view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-table-light.png",
+                        "caption": "Table view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-table-light-sm.png",
+                        "caption": "Table view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/due-date-light.png",
+                        "caption": "Select a due date for a task"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/due-date-light-sm.png",
+                        "caption": "Select a due date for a task (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/task-view-light.png",
+                        "caption": "View or edit a task"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/task-view-light-sm.png",
+                        "caption": "View or edit a task (mobile)"
+                    }
+                ],
+                
+                "dark": [
+                    {
+                        "src": "/assets/images/projects/crescent/project-board-dark.png",
+                        "caption": "Board view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-board-dark-sm.png",
+                        "caption": "Board view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-month-dark.png",
+                        "caption": "Monthly calendar view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-month-dark-sm.png",
+                        "caption": "Monthly calendar view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-week-dark.png",
+                        "caption": "Weekly calendar view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-calendar-week-dark-sm.png",
+                        "caption": "Weekly calendar view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-table-dark.png",
+                        "caption": "Table view of tasks"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/project-table-dark-sm.png",
+                        "caption": "Table view of tasks (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/due-date-dark.png",
+                        "caption": "Select a due date for a task"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/due-date-dark-sm.png",
+                        "caption": "Select a due date for a task (mobile)"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/task-view-dark.png",
+                        "caption": "View or edit a task"
+                    },
+                    {
+                        "src": "/assets/images/projects/crescent/task-view-dark-sm.png",
+                        "caption": "View or edit a task (mobile)"
+                    }
+                ]
+            }
         }
     ]
 }

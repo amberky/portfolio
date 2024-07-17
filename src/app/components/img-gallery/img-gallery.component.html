@@ -1,9 +1,9 @@
 <div #imgTrackContainer class="img-track-container">
     <div #imgTrack class="img-track flex w-max pb-10 transition-transform duration-300">
         @for (img of images; track img) {
-            <div class="cursor-pointer img-container" [hidden]="!img.status" [style.min-width]="imgWidth"
+            <div class="cursor-pointer img-container" [hidden]="!img.loaded" [style.min-width]="imgWidth"
                 (click)="imgService.openImageModal(img.src, img.caption)">
-                <img class="h-full" [src]="img.src" (load)="img.status = true" />
+                <img class="h-full" [src]="img.src" (load)="img.loaded = true" />
                 <span class="text-xs text-center mt-2">{{ img.caption }}</span>
             </div>
         }

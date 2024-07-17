@@ -1,63 +1,41 @@
-import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { ImageGalleryComponent } from '../../../components/img-gallery/img-gallery.component';
-import { ImageService } from '../../../services/image.service';
-import { HttpClient } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { DataService } from '../../../services/data.service';
 
 @Component({
     selector: 'app-project-quotes',
     standalone: true,
-    imports: [ImageGalleryComponent],
+    imports: [CommonModule, ImageGalleryComponent],
     templateUrl: './project-quotes.component.html',
     styleUrl: './project-quotes.component.css'
 })
-export class ProjectQuotesComponent implements OnDestroy {
+export class ProjectQuotesComponent implements AfterViewInit {
     imgWidth!: string | null;
     scrollAmount: number = 0;
 
     @ViewChild('container', { static: true }) container!: ElementRef;
 
-    iPhone65Images: { src: string, status: boolean, caption: string }[] = [];
-    iPhone55Images: { src: string, status: boolean, caption: string }[] = [];
-    watchImages: { src: string, status: boolean, caption: string }[] = [];
-
-    private subscription: Subscription;
+    data = this.dataService.getProjectQuotes();
 
     constructor(private cdRef: ChangeDetectorRef,
-                private http: HttpClient,
-                private imgService: ImageService) {
-
-        this.subscription = this.http.get('assets/data/project-quotes.json')
-            .subscribe((data: any) => {
-                this.iPhone65Images = data.iPhone65Images;
-                this.iPhone55Images = data.iPhone55Images;
-                this.watchImages = data.watchImages;
-
-                const images = [
-                    ...this.iPhone65Images,
-                    ...this.iPhone55Images,
-                    ...this.watchImages
-                ];
-                this.imgService.preloadImages(images.map(m => m.src));
-            });
-    }
-
-    ngOnInit(): void {
+                private dataService: DataService) {
     }
 
     ngAfterViewInit(): void {
-        const containerWidth = this.container.nativeElement.clientWidth;
-        if (containerWidth <= 500) {
-            this.imgWidth = '300px';
-            this.scrollAmount = 300 + 16;
-        } else {
-            this.imgWidth = '500px';
-            this.scrollAmount = 500 + 16;
-        }
-        this.cdRef.detectChanges();
+        this.calculateWidth();
     }
 
-    ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.calculateWidth();
+    }
+
+    calculateWidth() {
+        const containerWidth = this.container.nativeElement.clientWidth;
+        this.imgWidth = containerWidth <= 500 ? `${containerWidth}px` : '500px';
+        this.scrollAmount = containerWidth <= 500 ? containerWidth + 16 : 500 + 16;
+        this.cdRef.detectChanges();
     }
 }

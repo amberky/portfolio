@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data.service';
 
 @Component({
     selector: 'app-overview',
     standalone: true,
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './overview.component.html',
     styleUrl: './overview.component.css'
 })
 export class OverviewComponent implements OnInit {
     OCCUPATION = 'Software developer';
     occupation = '';
+
+    data = this.dataService.getContacts();
+
+    constructor(private dataService: DataService) {}
     
     ngOnInit(): void {
         this.startTyping();

@@ -2,20 +2,13 @@
 <div class="text-gray-500 dark:text-gray-400 italic">Let's discuss, I would love to connect and discuss how we can work together.</div>
 
 <div class="pt-10 flex justify-center">
-    <a class="group/email relative mx-10 hover:scale-105" href="mailto:ambereu.work@gmail.com">
-        <i class="text-7xl fa-regular fa-envelope"></i>
-        <span class="group-hover/email:opacity-100 opacity-0 
-                    group-hover/email:scale-105 tooltip">
-            Say hi!
-        </span>
-    </a>
-
-    <a class="group/linkedin relative mx-10 hover:scale-105"
-        href="https://www.linkedin.com/in/amber-eu-b11b78155" target="_blank">
-        <i class="text-7xl fa-brands fa-linkedin-in"></i>
-        <span class="group-hover/linkedin:opacity-100 opacity-0 
-                    group-hover/linkedin:scale-105 tooltip">
-            Let's connect!
-        </span>
-    </a>
+    @for (contact of data | async; let index = $index; track index) {
+        <a class="group relative mx-10 hover:scale-105" [href]="contact.link" target="_blank">
+            <i class="text-7xl" [ngClass]="contact.icon"></i>
+            <span class="group-hover:opacity-100 opacity-0 
+                        group-hover:scale-105 tooltip">
+                {{ contact.tooltip }}
+            </span>
+        </a>
+    }
 </div>

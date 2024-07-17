@@ -1,32 +1,19 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ImageService } from '../../services/image.service';
-import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
+
+import { DataService } from '../../services/data.service';
 
 @Component({
     selector: 'app-projects',
     standalone: true,
-    imports: [RouterModule],
+    imports: [RouterModule, CommonModule],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.css'
 })
-export class ProjectsComponent implements OnDestroy {
-    projects: any[] = [];
-    private subscription: Subscription;
+export class ProjectsComponent {
+    projects = this.dataService.getProjects();
 
-    constructor(private http: HttpClient,
-                private imgService: ImageService) {
-
-        this.subscription = this.http.get('assets/data/projects.json')
-            .subscribe((data: any) => {
-                this.projects = data.projects || [];
-                const images = this.projects.map(m => m.images);
-                this.imgService.preloadImages(images);
-            });
-    }
-
-    ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+    constructor(private dataService: DataService) {
     }
 }

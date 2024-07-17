@@ -8,7 +8,7 @@
     }
         
     body {
-        @apply text-base bg-white dark:bg-stone-950 text-stone-950 dark:text-white tracking-wide;
+        @apply text-base bg-white dark:bg-stone-950 text-stone-950 dark:text-gray-300 tracking-wide;
     }
 
     * {
@@ -55,7 +55,7 @@
 @layer components {
     .tooltip {
         @apply scale-0 transition duration-100
-                absolute -top-7 -left-1 text-xs whitespace-nowrap
+                absolute -top-7 -left-1 text-xss whitespace-nowrap
                 bg-black text-white rounded-md py-0.5 px-2 border-1 border-stone-800;
     }
 
