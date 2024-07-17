@@ -8,7 +8,7 @@
     }
         
     body {
-        @apply text-base bg-white dark:bg-stone-900 text-stone-950 dark:text-gray-300 tracking-wide;
+        @apply text-base bg-white dark:bg-stone-950 text-stone-950 dark:text-gray-300 tracking-wide;
     }
 
     * {
