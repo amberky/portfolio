@@ -20,7 +20,7 @@ It is designed with a mobile-first approach and supports both dark and light mod
 - Contact info
 
 ## Demo
-Check out the live demo of the project [here](https://ambereu-portfolio.netlify.app/).
+Check out the live demo of the project [here](https://ambereu-portfolio.vercel.app/).
 
 ## Installation
 To get a local copy of this project up and running, follow these simple steps:
