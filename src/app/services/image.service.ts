@@ -5,38 +5,31 @@ import { Injectable } from '@angular/core';
 })
 export class ImageService {
     private backdrop!: HTMLDivElement | null;
+    private img!: HTMLImageElement | null;
 
-    openImageModal(imageUrl: string, title?: string): void {
+    zoomInImage(imageUrl: string, title?: string): void {
         this.backdrop = document.createElement('div');
         this.backdrop.className = 'app-backdrop';
         const wrapper = document.createElement('div');
         wrapper.className = 'app-backdrop-content-wrapper overlay';
 
         const container = document.createElement('div');
-        container.className = 'max-w-[90vw] lg:max-w-[60vw] max-h-[90vh] rounded-md bg-slate-100 dark:bg-slate-700 p-4 flex flex-col';
+        container.className = 'max-w-[90vw] max-h-[90vh] cursor-zoom-out';
         
-        const img = document.createElement('img');
-        img.src = imageUrl;
+        this.img = document.createElement('img');
+        this.img.className = 'scale-0 transition-all duration-300';
+        this.img.src = imageUrl;
+        if (title) {
+            this.img.title = title;
+            this.img.alt = title;
+        }
 
         const imgContainer = document.createElement('div');
         imgContainer.className = 'overflow-auto';
-        imgContainer.appendChild(img);
+        imgContainer.appendChild(this.img);
 
-        const caption = document.createElement('div');
-        caption.className = 'text-sm';
-        caption.innerHTML = title || '';
+        imgContainer.addEventListener('click', () => this.closeImageModal());
 
-        const closeButton = document.createElement('button');
-        closeButton.className = 'ps-4';
-        closeButton.innerHTML = '<i class="fas fa-xmark"></i>';
-        closeButton.addEventListener('click', () => this.closeImageModal());
-
-        const header = document.createElement('div');
-        header.className = 'flex justify-between items-start pb-2';
-        header.appendChild(caption);
-        header.appendChild(closeButton);
-
-        container.appendChild(header);
         container.appendChild(imgContainer);
 
         wrapper.appendChild(container);
@@ -44,8 +37,10 @@ export class ImageService {
         this.backdrop.appendChild(wrapper);
         document.body.appendChild(this.backdrop);
 
-        // Disable scrolling on the body
-        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            this.img?.classList.remove('scale-0');
+            this.img?.classList.add('scale-100');
+        }, 10);
 
         this.backdrop.addEventListener('click', (event: Event) => {
             if (((event.target as Node) == wrapper) ||
@@ -53,15 +48,26 @@ export class ImageService {
                 this.closeImageModal();
             }
         });
+
+        document.addEventListener('scroll', this.handleScroll);
     }
 
     closeImageModal(): void {
         if (this.backdrop && this.backdrop.parentNode) {
-            this.backdrop.parentNode.removeChild(this.backdrop);
-            this.backdrop = null;
+            this.img?.classList.remove('scale-100');
+            this.img?.classList.add('scale-0');
 
-            // Re-enable scrolling on the body
-            document.body.style.overflow = '';
+            setTimeout(() => {
+                this.backdrop?.parentNode?.removeChild(this.backdrop);
+                this.backdrop = null;
+                
+                // Remove the scroll event listener
+                document.removeEventListener('scroll', this.handleScroll);
+            }, 100);
         }
     }
+
+    private handleScroll = (): void => {
+        this.closeImageModal();
+    };
 }

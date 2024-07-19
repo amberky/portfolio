@@ -78,6 +78,6 @@
     }
     
     .app-backdrop > .app-backdrop-content-wrapper.overlay {
-        @apply bg-[#45454550] dark:bg-[#3b3b3b8f] flex items-center justify-center;
+        @apply flex items-center justify-center;
     }
 }
