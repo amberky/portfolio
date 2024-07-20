@@ -20,7 +20,7 @@
                             "Backend Framework: Developed with FastAPI in Python, leveraging SwaggerUI for interactive API documentation.",
                             "Database: Data is stored in a NoSQL MongoDB database.",
                             "Authentication: Implemented using OAuth 2.0 with Google and JWT tokens.",
-                            "Email Service: Utilises Gmail API to send email to users for account verification and password reset."
+                            "Email Service: Utilises Gmail API to send emails to users for account verification and password reset."
                         ]
                     },
                     {
@@ -37,9 +37,9 @@
                 "label": "User Authentication",
                 "description": "Support for Google OAuth 2.0 and username/password login",
                 "list": [
-                    "The user can sign in using their Google account or by creating a new account with a username and password. ",
+                    "The user can sign in using their Google account or by creating a new account with a username and password.",
                     "The user can also reset their password if they forget it.",
-                    "Account registered with username/password needs to be verified via email."
+                    "Accounts registered with a username/password need to be verified via email."
                 ],
                 "images": {
                     "light": [
@@ -50,6 +50,14 @@
                         {
                             "src": "/assets/images/projects/crescent/login-light-sm.png",
                             "caption": "Login page (mobile)"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/signup-light.png",
+                            "caption": "Sign up page"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/signup-light-sm.png",
+                            "caption": "Sign up page (mobile)"
                         }
                     ],
                     "dark": [
@@ -60,6 +68,44 @@
                         {
                             "src": "/assets/images/projects/crescent/login-dark-sm.png",
                             "caption": "Login page (mobile)"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/signup-dark.png",
+                            "caption": "Sign up page"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/signup-dark-sm.png",
+                            "caption": "Sign up page (mobile)"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Dashboard (WIP)",
+                "description": "Overview of projects and tasks",
+                "list": [
+                    "The user can view a summary of their projects and tasks.",
+                    "Provides quick access to recent activities and upcoming deadlines."
+                ],
+                "images": {
+                    "light": [
+                        {
+                            "src": "/assets/images/projects/crescent/dashboard-light.png",
+                            "caption": "Dashboard page"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/dashboard-light-sm.png",
+                            "caption": "Dashboard page (mobile)"
+                        }
+                    ],
+                    "dark": [
+                        {
+                            "src": "/assets/images/projects/crescent/dashboard-dark.png",
+                            "caption": "Dashboard page"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/dashboard-dark-sm.png",
+                            "caption": "Dashboard page (mobile)"
                         }
                     ]
                 }
@@ -69,7 +115,7 @@
                 "description": "Create, update, and delete projects",
                 "list": [
                     "The user can create a new project, update the project details, and move the project to the trash.",
-                    "The user can also select the project icon (emoji) to represent the project."
+                    "The user can also select a project icon (emoji) to represent the project."
                 ],
                 "images": {
                     "light": [
@@ -82,23 +128,22 @@
                             "caption": "Display the information of a project (mobile)"
                         },
                         {
-                            "src": "/assets/images/projects/crescent/project-icon-light.png",
-                            "caption": "Select an icon for a project"
-                        },
-                        {
-                            "src": "/assets/images/projects/crescent/project-icon-light-sm.png",
-                            "caption": "Select an icon for a project"
-                        },
-                        {
                             "src": "/assets/images/projects/crescent/project-create-light.png",
                             "caption": "Create a new project"
                         },
                         {
                             "src": "/assets/images/projects/crescent/project-create-light-sm.png",
                             "caption": "Create a new project (mobile)"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/project-icon-light.png",
+                            "caption": "Select an icon for a project"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/project-icon-light-sm.png",
+                            "caption": "Select an icon for a project (mobile)"
                         }
                     ],
-
                     "dark": [
                         {
                             "src": "/assets/images/projects/crescent/project-overview-dark.png",
@@ -128,11 +173,12 @@
                 }
             },
             {
-                "label": "Tasks Management",
+                "label": "Task Management",
                 "description": "Create, update, and delete tasks",
                 "list": [
-                    "Support viewing tasks in board view, calendar view (monthly and weekly), and table view.",
-                    "Set due date, prority, and breakdown tasks into subtasks."
+                    "Support for viewing tasks in board view, calendar view (monthly and weekly), and table view.",
+                    "Set due dates, priorities, and break down tasks into subtasks.",
+                    "Add custom properties to tasks for better organisation."
                 ],
                 "images": {
                     "light": [
@@ -183,9 +229,16 @@
                         {
                             "src": "/assets/images/projects/crescent/task-view-light-sm.png",
                             "caption": "View or edit a task (mobile)"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/task-dynamic-properties-light.png",
+                            "caption": "Add custom properties"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/task-dynamic-properties-light-sm.png",
+                            "caption": "Add custom properties (mobile)"
                         }
                     ],
-                    
                     "dark": [
                         {
                             "src": "/assets/images/projects/crescent/project-board-dark.png",
@@ -234,6 +287,14 @@
                         {
                             "src": "/assets/images/projects/crescent/task-view-dark-sm.png",
                             "caption": "View or edit a task (mobile)"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/task-dynamic-properties-dark.png",
+                            "caption": "Add custom properties"
+                        },
+                        {
+                            "src": "/assets/images/projects/crescent/task-dynamic-properties-dark-sm.png",
+                            "caption": "Add custom properties (mobile)"
                         }
                     ]
                 }
