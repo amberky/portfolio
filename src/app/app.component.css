@@ -1,3 +1,24 @@
-.active {
-    @apply sm:border-0 md:border-b-2 md:border-blue-400;
+.navlink {
+    position: relative;
+}
+
+.navlink::after {
+    @apply bg-blue-400;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    height: 2px;
+    width: calc(100% + 8px);    /* 4px px */
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.active > .navlink::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.navlink:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }

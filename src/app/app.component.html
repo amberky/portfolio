@@ -1,6 +1,6 @@
 <div class="relative w-full lg:w-[1000px] mx-auto">
     @if (!isMobileView) {
-        <nav class="fixed bg-white dark:bg-stone-950 h-12 z-[999] w-[inherit] px-12 flex flex-row justify-between items-center">
+        <nav class="fixed bg-white dark:bg-stone-950 h-14 z-[999] w-[inherit] pt-2 px-12 flex flex-row justify-between items-start">
             <ul>
                 <li class="py-1">
                     <a href="/" class="font-semibold text-base">Amber</a>
@@ -8,10 +8,10 @@
             </ul>
             
             <ul class="flex flex-row">
-                <li class="ms-4 py-1" [class.active]="activeLink == '#about'"><a href="#about" (click)="activeLink = '#about'">About</a></li>
-                <li class="ms-4 py-1" [class.active]="activeLink == '#skills'"><a href="#skills" (click)="activeLink = '#skills'">Skills</a></li>
-                <li class="ms-4 py-1" [class.active]="activeLink == '#projects'"><a href="#projects" (click)="activeLink = '#projects'">Projects</a></li>
-                <li class="ms-4 py-1" [class.active]="activeLink == '#contact'"><a href="#contact" (click)="activeLink = '#contact'">Contact</a></li>
+                <li class="ms-6 py-1" [class.active]="activeLink == '#about'"><a class="navlink" href="#about" (click)="activeLink = '#about'">About</a></li>
+                <li class="ms-6 py-1" [class.active]="activeLink == '#skills'"><a class="navlink" href="#skills" (click)="activeLink = '#skills'">Skills</a></li>
+                <li class="ms-6 py-1" [class.active]="activeLink == '#projects'"><a class="navlink" href="#projects" (click)="activeLink = '#projects'">Projects</a></li>
+                <li class="ms-6 py-1" [class.active]="activeLink == '#contact'"><a class="navlink" href="#contact" (click)="activeLink = '#contact'">Contact</a></li>
             </ul>
         </nav>
     } @else {
