@@ -57,3 +57,10 @@ export interface Skill {
     label: string;
     images: string[];
 }
+
+export interface Experience {
+    title: string;
+    location: string;
+    duration: string;
+    companyName: string;
+}

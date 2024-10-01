@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "title": "Software Engineer",
+            "duration": "Aug 2021 - Sept 2024",
+            "company_name": "Yell Research Sdn Bhd",
+            "location": "Kuala Lumpur (Remote)"
+        },
+        {
+            "title": "Software Engineer",
+            "duration": "Dec 2017 - Jul 2019",
+            "company_name": "Kerry Logistics Network Sdn Bhd",
+            "location": "Penang"
+        },
+        {
+            "title": "Software Engineer",
+            "duration": "Apr 2016 - Nov 2017",
+            "company_name": "Priority Resources Sdn Bhd",
+            "location": "Penang"
+        }
+    ]
+}

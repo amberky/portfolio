@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
-import { QuotesProjectDataModel, CrescentProjectDataModel, Contact, Skill } from '../models/data.model';
+import { QuotesProjectDataModel, CrescentProjectDataModel, Contact, Skill, Experience } from '../models/data.model';
+import { ExperienceData } from '../models/response.model';
 
 @Injectable({
     providedIn: 'root'
@@ -37,5 +38,21 @@ export class DataService {
         return this.http
             .get<{ data: Skill[] }>('assets/data/skills.json')
             .pipe(map(res => res.data));
+    }
+    
+    getExperiences(): Observable<Experience[]> {
+        return this.http
+            .get<{ data: ExperienceData[] }>('assets/data/experiences.json')
+            .pipe(map(res => {
+                const data = res.data || [];
+                return data.map(m => {
+                    return {
+                        title: m.title,
+                        duration: m.duration,
+                        companyName: m.company_name,
+                        location: m.location
+                    };
+                });
+            }));
     }
 }

@@ -26,18 +26,12 @@
         'opacity-100': visible
     }">
     <ul class="list-disc *:mb-2">
-        <li class="*:mb-1">
-            <div>Software Engineer</div>
-            <div class="text-gray-500 dark:text-gray-400">Aug 2021 - Sept 2024 | Yell Research Sdn Bhd | Kuala Lumpur (Remote)</div>
-        </li>
-        <li class="*:mb-1">
-            <div>Software Engineer</div>
-            <div class="text-gray-500 dark:text-gray-400">Dec 2017 - Jul 2019 | Kerry Logistics Network | Penang</div>
-        </li>
-        <li class="*:mb-1">
-            <div>Programmer</div>
-            <div class="text-gray-500 dark:text-gray-400">Apr 2016 - Dec 2017 | Priority Resources Sdn Bhd | Penang</div>
-        </li>
+        @for (exp of data$ | async; track exp.title) {
+            <li class="*:mb-1">
+                <div>{{ exp.title }}</div>
+                <div class="text-gray-500 dark:text-gray-400">{{ exp.duration }} | {{ exp.companyName }} | {{ exp.location }}</div>
+            </li>
+        }
     </ul>
     </div>
 }
@@ -62,7 +56,7 @@
 
 <div class="mt-8">
     <a class="group relative hover:bg-slate-200 dark:hover:bg-slate-800 px-4 py-2 -left-4 rounded-full" 
-        href="assets/amber_eu_resume_fed.pdf" download="amber_eu_resume_fed.pdf">
+        href="assets/amber_eu_resume.pdf" download="amber_eu_resume_se.pdf">
         <i class="fa-solid fa-file-pdf pe-2"></i>
         Download resume
         <span class="group-hover:opacity-100 opacity-0 

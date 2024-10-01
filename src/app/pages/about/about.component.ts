@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
     selector: 'app-about',
@@ -14,6 +15,10 @@ export class AboutComponent implements OnInit {
 
     activeTab: string = 'exp';
     visible: boolean = true;
+
+    data$ = this.dataService.getExperiences();
+    
+    constructor(private dataService: DataService) {}
     
     ngOnInit(): void {
     }
