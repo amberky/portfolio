@@ -1,6 +1,14 @@
 {
     "data": [
         {
+            "label": "FastAPI",
+            "images": ["/assets/images/skills/fastapi.png"]
+        },
+        {
+            "label": "Python",
+            "images": ["/assets/images/skills/python.png"]
+        },
+        {
             "label": "Angular",
             "images": ["/assets/images/skills/angular.png"]
         },
@@ -24,16 +32,20 @@
             "images": ["/assets/images/skills/js.png"]
         },
         {
-            "label": "FastAPI",
-            "images": ["/assets/images/skills/fastapi.png"]
-        },
-        {
-            "label": "Python",
-            "images": ["/assets/images/skills/python.png"]
-        },
-        {
             "label": "PostgreSQL",
             "images": ["/assets/images/skills/postgresql.png"]
+        },
+        {
+            "label": "MySQL",
+            "images": ["/assets/images/skills/mysql.png"]
+        },
+        {
+            "label": "MongoDB",
+            "images": ["/assets/images/skills/mongodb.png"]
+        },
+        {
+            "label": "RabbitMQ",
+            "images": ["/assets/images/skills/rabbitmq.svg"]
         },
         {
             "label": "Git",
