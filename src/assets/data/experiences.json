@@ -1,9 +1,15 @@
 {
     "data": [
         {
+            "title": "Backend Technical Leader",
+            "duration": "May 2025 - Oct 2026",
+            "company_name": "CFI Financial Group",
+            "location": "Kuala Lumpur (Remote)"
+        },
+        {
             "title": "Python Backend Developer",
-            "duration": "Oct 2024 - Present",
-            "company_name": "DIRFT Capital Sdn Bhd (Client: CFI Financial Group)",
+            "duration": "Oct 2024 - May 2025",
+            "company_name": "CFI Financial Group",
             "location": "Kuala Lumpur (Remote)"
         },
         {
@@ -19,7 +25,7 @@
             "location": "Penang"
         },
         {
-            "title": "Software Engineer",
+            "title": "Programmer",
             "duration": "Apr 2016 - Nov 2017",
             "company_name": "Priority Resources Sdn Bhd",
             "location": "Penang"
